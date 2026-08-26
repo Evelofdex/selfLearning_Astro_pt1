@@ -1,0 +1,183 @@
+---
+const name = "Jordan Reyes"
+const job = "Freelance Graphic designer"
+const email = "Someone@Example.com"
+---
+
+<body>
+    <div id="canvas"> 
+        <div id="outerBox" class="box outerBoxAnim"> </div>
+        <div id="mainBox" class="box">
+            <div id="colProfile"> 
+                <div id="profilePicture"> </div>
+            </div>
+            <div id="colName">
+                <p id="name">{name}</p>
+                <p id="job">{job}</p>
+            </div>
+            <div class="lineDivider"></div>
+            <div id="colContact">
+                <p style="margin: 0px; font-size: small; color: rgb(190, 190, 190);"> Contact me at: </p>
+                <a id="email">{email}</a>
+            </div>
+        </div>    
+    </div>
+</body>
+
+<script>
+    const mainBox = document.getElementById("mainBox")
+    const outerBox = document.getElementById("outerBox")
+ 
+
+    const scale = 0.7;
+
+    mainBox?.addEventListener("mouseenter", () =>{
+        outerBox!.style.transform = `scale(1, ${scale})`
+    })
+    mainBox?.addEventListener("mouseleave", () => {
+        outerBox!.style.transform = `scale(1, 1)`
+    })
+</script>
+
+<style>
+    .box{
+        position: absolute;
+    }
+    body{
+        background-color: black;
+    }
+    #canvas{
+        display: flex;
+        width: 500px;
+        height: 500px;
+
+        background-color: transparent;
+
+        align-self: center;
+        justify-self: center;
+
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    
+    .lineDivider{
+        width: 350px;
+        height: 1px;
+
+        background-color: white;
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #outerBox{
+        width: 420px;
+        height: 370px;
+
+        border-radius: 20px;
+
+        background-color: rgb(63, 63, 63);
+
+        display: flex;
+
+
+        align-items: center;
+        justify-content: center;
+    }
+    .outerBoxAnim{
+        transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)
+    }
+    #mainBox{
+        align-items: center;
+
+        width: 400px;
+
+        border-radius: 20px;
+        background-color: rgb(102, 102, 102);
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        transition: none;
+    }
+
+    #colProfile{
+        width: 300px;
+        height: 100px;
+
+        background-color: transparent;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #profilePicture{
+        width: 100px;
+        height: 100px;
+
+        background-color: whitesmoke;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-size: auto;
+
+        border-radius: 50px;
+    }
+
+
+
+    #colName{
+        width: 300px;
+
+        background-color: transparent;
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+    #name{
+        margin: 0px;
+
+        font-size: 25px;
+    }
+    #job{
+        margin: 0px;
+
+        color: rgb(209, 209, 209);
+    }
+
+
+
+    #colContact{
+        width: 300px;
+
+        background-color: transparent;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+    #email{
+        margin: 0px;
+
+        font-size: large;
+
+        color: rgb(93, 174, 255);
+    }
+
+    
+</style>
+
